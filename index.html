@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="q32bvwpy.ico">
+<style>
+
+
+
+</style>
+</head>
+<body>
+<header>
+
+  <nav class="navbar">
+    <a href="index.html">
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Warner_Bros_logo.svg/1965px-Warner_Bros_logo.svg.png" alt="Warner Bros Logo">
+    </a>   
+    <div class="navbar-links">
+      <a class="navbar-link" href="Movies.html">Movies</a>
+      <a class="navbar-link" href="TvShows.html">TV Shows</a>
+      <a class="navbar-link" href="Games&Apps.html">Games & Apps</a>
+    </div>
+  </nav>
+</header>
+
+<section class="trending-movies">
+  <div class="movie-list">
+    <div class="movie">
+      <img src="https://media.zenfs.com/en/superherohype_979/14cf45ccd59cf96458cecc62a22e2b39" alt="Blue Beetle">
+    </div>
+
+    <div class="movie">
+      <img src="https://preview.redd.it/blue-beetle-is-officially-a-filmed-for-imax-movie-v0-golicqvyqqra1.jpg?auto=webp&s=c239451fc988cd296c8ecd90dea0d03c68738134" alt="Blue Beetle Date">
+    </div>
+    
+    <div class="movie">
+      <img src="https://imageio.forbes.com/blogs-images/scottmendelson/files/2018/07/aquaman-posterB-1122910-1200x752.jpeg?format=jpg&width=1200" alt="Aquaman">
+    </div>
+    
+    <div class="movie">
+      <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/02/the-flash-poster-social-featured.jpg" alt="The Flash">
+    </div>
+  </div>
+</section>
+
+
+<script>
+  // JavaScript to pause animation when the section is not visible
+  const trendingMovies = document.querySelector('.trending-movies');
+
+  // Pause animation when the section is not in the viewport
+  function pauseAnimation() {
+    trendingMovies.style.animationPlayState = 'paused';
+  }
+
+  // Resume animation when the section is in the viewport
+  function resumeAnimation() {
+    trendingMovies.style.animationPlayState = 'running';
+  }
+
+  // Intersection Observer to track section visibility
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        resumeAnimation();
+      } else {
+        pauseAnimation();
+      }
+    });
+  }, options);
+
+  observer.observe(trendingMovies);
+</script>
+
+
+<section class="welcome-section">
+  <div class="welcome-content">
+    <h1>Welcome to Warner Bros.</h1>
+    <a href="Movies.html" class="btn">Start Streaming</a>
+  </div>
+</section>
+<br>
+<footer>
+  <p>&copy; 2024 Warner Bros. All rights reserved.</p>
+  <div class="feedback">
+    <a href="Feedback.html">Feedback</a>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
